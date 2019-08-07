@@ -28,6 +28,9 @@ public class Rocket : MonoBehaviour
     }
     
     void Rotate(){
+
+        rigidBody.freezeRotation = true;
+
         if(Input.GetKey(KeyCode.A))
         {            
             transform.Rotate(Vector3.forward); //rotate on z
@@ -35,6 +38,8 @@ public class Rocket : MonoBehaviour
         else if(Input.GetKey(KeyCode.D))
         {            
             transform.Rotate(-Vector3.forward);  //rotate on z
-        }                
+        }
+
+        rigidBody.freezeRotation = false;
     }
 }
